@@ -1,0 +1,5 @@
+<div class="collection">
+<a class="collection-item" *ngFor="let materia of materias" [routerLink]="['/materia', materia._id]"   >
+    {{ materia.titulo }}
+  </a>
+</div>
