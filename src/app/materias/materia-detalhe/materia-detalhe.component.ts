@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { MateriasService } from './../materias/materias.service';
-import { LogService } from './../shared/log.service';
+import { MateriasService } from './../materias.service';
+import { LogService } from './../../shared/log.service';
 
 @Component({
   selector: 'materia-detalhe',

@@ -32,4 +32,11 @@ export class UsuariosService {
         .get(this._apiUrl)
         .map((response: Response) => <Usuario[]> response.json().data);      
   }
+
+  getUsuario(id: string) : Observable<any> {
+    this.logService.consoleLog('Obtendo usuário ' + id);
+    return this._http
+      .get(this._apiUrl + '/' + id)
+      .map((response: Response) => <any> response.json().data);
+  }
 }
