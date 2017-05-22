@@ -35,7 +35,7 @@ export class UsuarioFormComponent implements OnInit {
     );
   }
 
-   onInput(){
+  onInput(){
     this.formMudou = true;
     console.log('mudou');
   }
