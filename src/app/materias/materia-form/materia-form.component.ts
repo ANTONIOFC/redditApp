@@ -6,11 +6,11 @@ import { MateriasService } from './../materias.service';
 import { LogService } from './../../shared/log.service';
 
 @Component({
-  selector: 'materia-detalhe',
-  templateUrl: './materia-detalhe.component.html',
-  styleUrls: ['./materia-detalhe.component.css']
+  selector: 'materia-form',
+  templateUrl: './materia-form.component.html',
+  styleUrls: ['./materia-form.component.css']
 })
-export class MateriaDetalheComponent implements OnInit {
+export class MateriaFormComponent implements OnInit {
 
   id: string;
   materia: any;
@@ -21,11 +21,10 @@ export class MateriaDetalheComponent implements OnInit {
     private materiasService: MateriasService,
     private router: Router,
     private logService: LogService  
-  ) { 
-    //this.id = this.route.snapshot.params['id'];
-  }
+  ) { }
 
   ngOnInit() {
+    this.materia = {};
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
          this.id = params['id'];
@@ -41,13 +40,7 @@ export class MateriaDetalheComponent implements OnInit {
     );
   }
 
-  editarMateria(){
-    this.logService.consoleLog(this.materia);
-    this.router.navigate(['/materias', this.materia._id, 'editar']);
-  }
-
   ngOnDestroy() {
     this.inscricao.unsubscribe();
   }
-
 }

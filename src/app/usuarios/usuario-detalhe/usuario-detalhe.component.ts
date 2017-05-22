@@ -6,7 +6,7 @@ import { UsuariosService } from './../usuarios.service';
 import { LogService } from './../../shared/log.service';
 
 @Component({
-  selector: 'app-usuario-detalhe',
+  selector: 'usuario-detalhe',
   templateUrl: './usuario-detalhe.component.html',
   styleUrls: ['./usuario-detalhe.component.css']
 })
@@ -18,6 +18,7 @@ export class UsuarioDetalheComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private usuariosService: UsuariosService,
+    private router: Router,
     private logService: LogService
   ) { }
 
@@ -30,6 +31,11 @@ export class UsuarioDetalheComponent implements OnInit {
           .subscribe(u => { this.usuario = u; });
       }
     );
+  }
+
+  editarUsuario(){
+    this.logService.consoleLog(this.usuario);
+    this.router.navigate(['/usuarios', this.usuario._id, 'editar']);
   }
 
   ngOnDestroy() {

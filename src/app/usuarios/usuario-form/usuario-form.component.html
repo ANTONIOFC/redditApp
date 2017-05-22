@@ -1,3 +1,34 @@
-<p>
-  usuario-form works!
-</p>
+<h5>Criar/Editar Usuário</h5>
+
+<div class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input disabled [(ngModel)]="usuario._id" id="disabled" type="text">
+      <label for="disabled" class="active">#</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="nome" [(ngModel)]="usuario.nome" class="validate" (input)="onInput()">
+      <label for="nome" class="active">Nome</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="logon" [(ngModel)]="usuario.logon" class="validate" (input)="onInput()">
+      <label for="logon" class="active">Logon</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="senha" type="password" [(ngModel)]="usuario.senha" class="validate" (input)="onInput()">
+      <label for="senha" class="active">Senha</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="email" [(ngModel)]="usuario.email" type="email" class="validate">
+      <label for="email" class="active">Email</label>
+    </div>
+  </div>
+</div> 

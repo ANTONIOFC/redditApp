@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { UsuariosRoutingModule } from './usuarios.routing.module';
 import { UsuariosComponent } from './usuarios.component';
@@ -10,6 +11,7 @@ import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.compo
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     UsuariosRoutingModule
   ],
   declarations: [

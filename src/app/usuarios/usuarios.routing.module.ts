@@ -10,7 +10,7 @@ const usuariosRoutes: Routes = [
     { path: 'usuarios', component: UsuariosComponent, children: [
         { path: 'novo', component: UsuarioFormComponent },
         { path: ':id', component: UsuarioDetalheComponent },
-        { path: ':id/editar', component: UsuarioDetalheComponent }
+        { path: ':id/editar', component: UsuarioFormComponent }
     ]}
 ];
 

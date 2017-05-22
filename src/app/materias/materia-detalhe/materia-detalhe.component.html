@@ -1,3 +1,7 @@
-<p>
-  Matéria: {{ materia?.titulo }} 
-</p>
+<h5>Detalhes da Matéria</h5>
+
+<p>Título: {{ materia?.titulo }}</p>
+<p>Texto / Link: {{ materia?.texto }} {{ materia?.link }}</p>
+<p>Autor: {{ materia?._creator.nome }}</p>
+
+<a class="waves-effect waves-light btn" (click)="editarMateria()">Editar</a>

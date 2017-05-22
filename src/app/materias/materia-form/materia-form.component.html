@@ -1,0 +1,28 @@
+<h5>Criar/Editar Matéria</h5>
+
+<div class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input disabled [(ngModel)]="materia._id" id="disabled" type="text">
+      <label for="disabled" class="active">#</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="titulo" type="text" [(ngModel)]="materia.titulo" class="validate" (input)="onInput()">
+      <label for="titulo" class="active">Título</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea id="texto" [(ngModel)]="materia.texto" class="materialize-textarea" (input)="onInput()"></textarea>
+      <label for="texto" class="active">Texto</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="link" [(ngModel)]="materia.link" class="validate" (input)="onInput()">
+      <label for="link" class="active">Link</label>
+    </div>
+  </div>
+</div> 
