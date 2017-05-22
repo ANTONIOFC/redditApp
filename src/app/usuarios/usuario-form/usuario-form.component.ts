@@ -14,6 +14,7 @@ export class UsuarioFormComponent implements OnInit {
 
   usuario: any;
   inscricao: Subscription;
+  private formMudou: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,11 @@ export class UsuarioFormComponent implements OnInit {
           .subscribe(u => { this.usuario = u; });
       }
     );
+  }
+
+   onInput(){
+    this.formMudou = true;
+    console.log('mudou');
   }
 
   ngOnDestroy() {

@@ -15,6 +15,7 @@ export class MateriaFormComponent implements OnInit {
   id: string;
   materia: any;
   inscricao: Subscription;
+  private formMudou: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +39,11 @@ export class MateriaFormComponent implements OnInit {
             });
       }
     );
+  }
+
+  onInput(){
+    this.formMudou = true;
+    console.log('mudou');
   }
 
   ngOnDestroy() {
