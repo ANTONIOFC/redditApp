@@ -9,8 +9,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 const routes: Routes = [
-    { path: 'autenticacao', component: AutenticacaoComponent },
-    { path: 'usuarios', component: UsuariosComponent },
+    { path: 'materias', loadChildren: 'app/materias/materias.module#MateriasModule' },
+    { path: 'usuarios', loadChildren: 'app/usuarios/usuarios.module#UsuariosModule' },
+    { path: 'autenticacao', component: AutenticacaoComponent },    
    // { path: 'materias', component: MateriasComponent },
    // { path: 'materia/:id', component: MateriaDetalheComponent },
    // { path: 'materiaNaoEncontrada', component: MateriaNaoEncontradaComponent },

@@ -4,7 +4,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { LogService } from './../shared/log.service';
-import { Usuario } from './usuario';
+import { Usuario } from './../models/usuario';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -18,12 +18,6 @@ export class UsuariosService {
   constructor(
     private _http: Http,
     private logService: LogService) { }
-
-
-  logar(logon:string) {
-    return this._http.get(this._apiUrl + '/' + logon)
-      .map((res:Response) => res.json().data);
-  }
 
   getAll() : Observable<Usuario[]> {
     this.logService.consoleLog('Listando os usuários');

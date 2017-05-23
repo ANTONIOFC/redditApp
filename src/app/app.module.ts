@@ -14,12 +14,13 @@ import { HomeComponent } from './home/home.component';
 //import { routing } from './app.routing';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
-import { MateriasModule } from './materias/materias.module';
-import { UsuariosModule } from './usuarios/usuarios.module';
+//import { MateriasModule } from './materias/materias.module';
+//import { UsuariosModule } from './usuarios/usuarios.module';
 //import { MateriasComponent } from './materias/materias.component';
 //import { MateriaDetalheComponent } from './materias/materia-detalhe/materia-detalhe.component';
 //import { MateriaNaoEncontradaComponent } from './materias/materia-nao-encontrada/materia-nao-encontrada.component';
 //import { MateriasService } from './materias/materias.service';
+import { AuthService } from './autenticacao/auth.service';
 
 
 @NgModule({
@@ -37,8 +38,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MateriasModule,
-    UsuariosModule,
+    //MateriasModule,
+    //UsuariosModule,
     AppRoutingModule,
     MaterializeModule
     //routing
@@ -46,6 +47,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
   providers: [
     //UsuariosService,
     //MateriasService,
+    AuthService,
     LogService
   ],
   bootstrap: [AppComponent]
