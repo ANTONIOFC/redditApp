@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
@@ -21,7 +21,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 //import { MateriaNaoEncontradaComponent } from './materias/materia-nao-encontrada/materia-nao-encontrada.component';
 //import { MateriasService } from './materias/materias.service';
 import { AuthService } from './autenticacao/auth.service';
-
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { AuthService } from './autenticacao/auth.service';
     //UsuariosService,
     //MateriasService,
     AuthService,
-    LogService
+    LogService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

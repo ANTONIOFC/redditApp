@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'cabecalho',
   templateUrl: './cabecalho.component.html',
   styleUrls: ['./cabecalho.component.css']
 })
-export class CabecalhoComponent implements OnInit {
+export class CabecalhoComponent {
+
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

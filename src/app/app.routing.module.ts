@@ -7,15 +7,24 @@ import { HomeComponent } from './home/home.component';
 //import { MateriasComponent } from './materias/materias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-    { path: 'materias', loadChildren: 'app/materias/materias.module#MateriasModule' },
-    { path: 'usuarios', loadChildren: 'app/usuarios/usuarios.module#UsuariosModule' },
-    { path: 'autenticacao', component: AutenticacaoComponent },    
+    { path: 'materias', 
+        loadChildren: 'app/materias/materias.module#MateriasModule',
+        canActivate: [AuthGuard]
+    },
+    { path: 'usuarios', 
+        loadChildren: 'app/usuarios/usuarios.module#UsuariosModule',
+        canActivate: [AuthGuard]
+    },
+    { path: 'login', component: AutenticacaoComponent },    
    // { path: 'materias', component: MateriasComponent },
    // { path: 'materia/:id', component: MateriaDetalheComponent },
    // { path: 'materiaNaoEncontrada', component: MateriaNaoEncontradaComponent },
-    { path: '', component: HomeComponent }
+    { path: '', component: HomeComponent,
+      canActivate: [AuthGuard]  
+    }
 ];
 
 @NgModule({
