@@ -22,6 +22,8 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 //import { MateriasService } from './materias/materias.service';
 import { AuthService } from './autenticacao/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { MateriasGuard } from './guards/materias.guard';
+import { UsuariosGuard } from './guards/usuarios.guard';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { AuthGuard } from './guards/auth.guard';
     //MateriasService,
     AuthService,
     LogService,
-    AuthGuard
+    AuthGuard,
+    MateriasGuard,
+    UsuariosGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -11,7 +11,7 @@ import { Usuario } from './../models/usuario';
 })
 export class AutenticacaoComponent implements OnInit {
 
-  private usuario: Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
 
   constructor(
     private logService: LogService,
