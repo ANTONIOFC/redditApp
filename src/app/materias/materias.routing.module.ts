@@ -1,5 +1,6 @@
+import { MateriasDeactivateGuard } from './../guards/materias.deactivate.guard';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanDeactivate } from '@angular/router';
 
 import { MateriasComponent } from './materias.component';
 import { MateriaDetalheComponent } from './materia-detalhe/materia-detalhe.component';
@@ -10,7 +11,9 @@ const materiasRoutes: Routes = [
     { path: '', component: MateriasComponent, children: [
       { path: 'nova', component: MateriaFormComponent },
       { path: ':id', component: MateriaDetalheComponent },
-      { path: ':id/editar', component: MateriaFormComponent },
+      { path: ':id/editar', component: MateriaFormComponent,
+          canDeactivate: [MateriasDeactivateGuard]
+      },
       { path: 'materiaNaoEncontrada', component: MateriaNaoEncontradaComponent }
     ]}
 ];

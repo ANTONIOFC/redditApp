@@ -43,7 +43,14 @@ export class MateriaFormComponent implements OnInit {
 
   onInput(){
     this.formMudou = true;
-    console.log('mudou');
+    //console.log('mudou');
+  }
+
+  podeMudarRota() {
+    if (this.formMudou) {
+      return confirm('Tem certeza que deseja sair do form ?');
+    }
+    return true;
   }
 
   ngOnDestroy() {
