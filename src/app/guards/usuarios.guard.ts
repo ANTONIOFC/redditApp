@@ -14,11 +14,11 @@ export class UsuariosGuard implements CanActivateChild {
             console.log(state);
             console.log('guarda dos filhos de usuários');
             // fazendo um teste simples. Se a url tem a string editar
-            if (state.url.includes('editar')) {
+            /*if (state.url.includes('editar')) {
                 // desabilito a rota
                 alert('Usuário sem acesso');
                 return false;
-            }
+            }*/
             return true;
         }
 }

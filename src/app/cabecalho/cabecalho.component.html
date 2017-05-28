@@ -1,10 +1,17 @@
-<nav>
-    <div class="nav-wrapper">
+<nav class="blue">
+    <div class="nav-wrapper" >
       <a routerLink="" class="brand-logo right">Reddit App</a>
+      <a materialize="sideNav" href="#" data-activates="menu-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li routerLinkActive="active"><a routerLink="/logins">Login</a></li>
+        <li routerLinkActive="active"><a routerLink="/logins">Logout</a></li>
         <li routerLinkActive="active"><a routerLink="/materias">Materias</a></li>
         <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>
+      </ul>
+
+      <ul class="side-nav" id="menu-mobile" >
+        <li routerLink=""><a routerLink="">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="/materias">Materias</a></li>
+        <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>      
       </ul>
     </div>
   </nav>

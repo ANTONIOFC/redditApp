@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
+import { Materia } from './../../models/materia';
 import { MateriasService } from './../materias.service';
 import { LogService } from './../../shared/log.service';
 
@@ -13,7 +14,7 @@ import { LogService } from './../../shared/log.service';
 export class MateriaFormComponent implements OnInit {
 
   id: string;
-  materia: any;
+  materia: Materia;
   inscricao: Subscription;
   private formMudou: boolean = false;
 
@@ -25,7 +26,7 @@ export class MateriaFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.materia = {};
+    this.materia = new Materia();
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
          this.id = params['id'];
@@ -52,6 +53,11 @@ export class MateriaFormComponent implements OnInit {
     }
     return true;
   }
+
+   onSubmit(form){
+      //this.logService.consoleLog(form);
+      console.log(this.materia);
+   }
 
   ngOnDestroy() {
     this.inscricao.unsubscribe();

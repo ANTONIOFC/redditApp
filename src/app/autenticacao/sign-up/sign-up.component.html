@@ -1,13 +1,6 @@
-<h5>Editar Usuário</h5>
-
-<div class="row">
-  <form #f="ngForm" materialize (ngSubmit)="onSubmit(f)" class="col s12">
-    <div class="row">
-      <div class="input-field col s12">
-        <input disabled [ngModel]="usuario._id" id="disabled" type="text" name="_id">
-        <label for="disabled" class="active">#</label>
-      </div>
-    </div>
+<h5>Criar Usuário</h5>
+  
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
     <div class="row">
       <div class="input-field col s12">
         <input id="nome" [(ngModel)]="usuario.nome" class="validate" name="nome" required>
@@ -33,8 +26,7 @@
       </div>
     </div>
 
-    <button class="btn waves-effect waves-light" type="submit" name="action">Gravar
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
-</div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Criar
+    <i class="material-icons right">send</i>
+  </button>
+</form>

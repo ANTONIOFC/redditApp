@@ -1,6 +1,7 @@
+import { UsuariosGuard } from './../guards/usuarios.guard';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 // Import RxJs required methods
@@ -15,7 +16,7 @@ export class AuthService {
 
   private usuario: Usuario = new Usuario();
   private isAutenticado: Boolean = false;
-  private _apiUrl = 'https://guarded-journey-20729.herokuapp.com/api/auth/';
+  private _apiUrl = 'https://guarded-journey-20729.herokuapp.com/api/';
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
@@ -26,31 +27,42 @@ export class AuthService {
   ) { }
 
   logar(_usuario: Usuario) {
-    this.logService.consoleLog('tentando logar ...');
-    //this._http.get(this._apiUrl + _usuario.logon)
-    //    .map((res:Response) => this.usuario = res.json().data);
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
 
      this._http
-        .get(this._apiUrl + _usuario.logon)
-          .map((response: Response) => <Usuario> response.json().data)
-          .subscribe(
-            (result) => { 
-              this.usuario = result;
-              this.logService.consoleLog('após logar ...');
-              this.logService.consoleLog(this.usuario.nome);
-              if (this.usuario.logon == _usuario.logon){
-                this.isAutenticado = true;
-                this.mostrarMenuEmitter.emit(true);
-                this.router.navigate(['/'])
-              } else {
-                this.isAutenticado = false;
-                this.mostrarMenuEmitter.emit(false);
-              }
-          }
-        );
+        .post(this._apiUrl + '/logar', JSON.stringify(_usuario), options )
+        .map((response: Response) => response.json().data)
+        .subscribe(result => {
+
+            this.usuario = result;
+
+            if (this.usuario) {
+              localStorage.setItem('usuarioAtual', JSON.stringify(this.usuario));
+              this.mostrarMenuEmitter.emit(true);
+              this.router.navigate(['/'])
+            } else {
+              this.mostrarMenuEmitter.emit(false);
+            }
+        });
   }
 
    usuarioEstaAutenticado(){
-      return this.isAutenticado;
+      console.log('Usuario esta autenticado: ');
+      console.log(localStorage.getItem('usuarioAtual'));
+      if (localStorage.getItem('usuarioAtual')) {
+          this.mostrarMenuEmitter.emit(true);
+          console.log('está');
+          return true;
+      }
+      console.log('não está');
+      return false;
   }
+
+  obterUsuarioAutenticado() {
+    return JSON.parse(localStorage.getItem('usuarioAtual'));
+  }
+
+
 }

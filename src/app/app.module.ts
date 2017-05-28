@@ -24,6 +24,7 @@ import { AuthService } from './autenticacao/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { MateriasGuard } from './guards/materias.guard';
 import { UsuariosGuard } from './guards/usuarios.guard';
+import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UsuariosGuard } from './guards/usuarios.guard';
     //UsuariosComponent,
     HomeComponent,
     AutenticacaoComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
+    SignUpComponent    
     //MateriasComponent,
     //MateriaDetalheComponent,
     //MateriaNaoEncontradaComponent
@@ -43,7 +45,7 @@ import { UsuariosGuard } from './guards/usuarios.guard';
     //MateriasModule,
     //UsuariosModule,
     AppRoutingModule,
-    MaterializeModule
+    MaterializeModule  
     //routing
   ],
   providers: [

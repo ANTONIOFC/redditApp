@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 //import { MateriasComponent } from './materias/materias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
+import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MateriasGuard } from './guards/materias.guard';
 //import { UsuariosGuard } from './guards/usuarios.guard';
@@ -22,7 +23,8 @@ const routes: Routes = [
         canActivate: [AuthGuard]
         //canActivateChild: [UsuariosGuard]
     },
-    { path: 'login', component: AutenticacaoComponent },    
+    { path: 'login', component: AutenticacaoComponent },
+    { path: 'signUp', component: SignUpComponent },
    // { path: 'materias', component: MateriasComponent },
    // { path: 'materia/:id', component: MateriaDetalheComponent },
    // { path: 'materiaNaoEncontrada', component: MateriaNaoEncontradaComponent },
