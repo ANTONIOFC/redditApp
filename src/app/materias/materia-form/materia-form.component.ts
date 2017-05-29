@@ -33,18 +33,9 @@ export class MateriaFormComponent implements OnInit {
          this.materiasService.getMateria(this.id)
             .subscribe(m => { 
               this.materia = m;
-
-             /* if (this.materia == null) {
-                this.router.navigate(['/materiaNaoEncontrada', this.id])
-              }*/ 
             });
       }
     );
-  }
-
-  onInput(){
-    this.formMudou = true;
-    //console.log('mudou');
   }
 
   podeMudarRota() {
@@ -55,8 +46,12 @@ export class MateriaFormComponent implements OnInit {
   }
 
    onSubmit(form){
-      //this.logService.consoleLog(form);
-      console.log(this.materia);
+      this.materiasService.atualizar(this.materia)
+        .subscribe(
+          data => { this.materia = data },
+          error => console.log(error),
+          () => this.router.navigate(['/materias'])
+        )
    }
 
   ngOnDestroy() {

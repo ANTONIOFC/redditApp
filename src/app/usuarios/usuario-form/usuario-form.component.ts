@@ -15,11 +15,11 @@ export class UsuarioFormComponent implements OnInit {
 
   usuario: Usuario;
   inscricao: Subscription;
-  //private formMudou: boolean = false;
-
+  
   constructor(
     private route: ActivatedRoute,
     private usuariosService: UsuariosService,
+    private router: Router,
     private logService: LogService
   ) { }
 
@@ -36,12 +36,13 @@ export class UsuarioFormComponent implements OnInit {
     );
   }
 
-  onSubmit() {
+  onSubmit(form) {
+
     this.usuariosService.atualizar(this.usuario)
     .subscribe(
       data => { this.usuario = data },
       error => console.log(error),
-      () => console.log('usuário atualizado')
+      () => this.router.navigate(['/usuarios'])
     )
   }
 

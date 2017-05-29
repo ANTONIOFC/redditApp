@@ -1,5 +1,5 @@
 export class Materia {
-    id: string;
+    _id: string;
     titulo: string;
     texto: string;
     link: string;

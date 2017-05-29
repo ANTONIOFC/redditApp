@@ -10,6 +10,7 @@ import { MateriaDetalheComponent } from './materia-detalhe/materia-detalhe.compo
 import { MateriaNaoEncontradaComponent } from './materia-nao-encontrada/materia-nao-encontrada.component';
 import { MateriasService } from './materias.service';
 import { MateriasDeactivateGuard } from './../guards/materias.deactivate.guard';
+import { MateriaNovaFormComponent } from './materia-nova-form/materia-nova-form.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MateriasDeactivateGuard } from './../guards/materias.deactivate.guard';
     MateriasComponent,
     MateriaFormComponent,
     MateriaDetalheComponent,
-    MateriaNaoEncontradaComponent
+    MateriaNaoEncontradaComponent,
+    MateriaNovaFormComponent
   ],
   providers: [
     MateriasService,
