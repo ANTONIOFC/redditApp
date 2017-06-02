@@ -1,41 +1,38 @@
-<h5>Editar Matéria</h5>
-
-<div class="row">
-  <form #f="ngForm" materialize (ngSubmit)="onSubmit(f)" class="col s12">
-    
-    <div class="row">    
-      <div class="input-field col s12">
-        <input disabled [ngModel]="materia._id" id="disabled" name="_id" type="text">
-        <label for="disabled" class="active">#</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="titulo" type="text" [(ngModel)]="materia.titulo" name="titulo" class="validate" required #titulo="ngModel">
-        <label for="titulo" class="active">Título</label>
-        <div *ngIf="!titulo.valid && titulo.touched" class="card-panel red lighten-4">
-          Título é obrigatório
-        </div>
-      </div> 
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <textarea id="texto" [(ngModel)]="materia.texto" name="texto" class="materialize-textarea" required #texto="ngModel"></textarea>
-        <label for="texto" class="active">Texto</label>
-        <div *ngIf="!texto.valid && texto.touched" class="card-panel red lighten-4">
-          Texto é obrigatório
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title">Edição de Matéria</h3>
+   </div>
+  <div class="panel-body">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">Título</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="título" 
+              [(ngModel)]="materia.titulo" #titulo="ngModel" required>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="link" [(ngModel)]="materia.link" name="link" class="validate">
-        <label for="link" class="active">Link</label>
-      </div>
-    </div>
 
-    <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" [disabled]="!f.valid">Gravar
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
+      <div class="form-group">
+          <label for="nome" class="col-sm-2 control-label">Texto</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="3"  id="texto" name="texto" placeholder="texto" 
+                [(ngModel)]="materia.texto" #texto="ngModel" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nome" class="col-sm-2 control-label">Link</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="link" name="link" placeholder="link" 
+                [(ngModel)]="materia.link" #link="ngModel" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!f.valid">Gravar</button>
+          </div>
+        </div>
+    </form>
+  </div>
 </div>

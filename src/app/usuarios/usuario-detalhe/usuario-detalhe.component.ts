@@ -38,6 +38,10 @@ export class UsuarioDetalheComponent implements OnInit {
     this.router.navigate(['/usuarios', this.usuario._id, 'editar']);
   }
 
+  excluirUsuario(f){
+    console.log(f);
+  }
+
   ngOnDestroy() {
     this.inscricao.unsubscribe();
   }

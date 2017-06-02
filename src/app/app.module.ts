@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
-import { MaterializeModule } from 'angular2-materialize';
 //import { UsuariosComponent } from './usuarios/usuarios.component';
 //import { UsuariosService } from './usuarios/usuarios.service';
 import { LogService } from './shared/log.service';
@@ -44,8 +43,7 @@ import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
     HttpModule,
     //MateriasModule,
     //UsuariosModule,
-    AppRoutingModule,
-    MaterializeModule  
+    AppRoutingModule  
     //routing
   ],
   providers: [

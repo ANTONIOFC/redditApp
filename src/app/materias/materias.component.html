@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col s6">
-    <h5>Lista de Matérias</h5>
-    <div class="collection">
-    <a class="collection-item" *ngFor="let materia of materias" [routerLink]="[materia._id]"   >
-        {{ materia.titulo }}
+  <div class="col-md-6">
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        Matérias
       </a>
+      <a *ngFor="let materia of materias" [routerLink]="[materia._id]" class="list-group-item">{{ materia.titulo }}</a>
     </div>
   </div>
-<div class="col s6">
- <router-outlet></router-outlet>
-</div>
+  <div class="col-md-6">
+    <router-outlet></router-outlet>
+  </div>
 </div>
