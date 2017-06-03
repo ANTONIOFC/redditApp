@@ -34,4 +34,7 @@ export class AutenticacaoComponent implements OnInit {
     this.router.navigate(['/signUp']);
   }
 
+  campoIsValidTouched(campo){
+    return !campo.valid && campo.touched;
+  }
 }

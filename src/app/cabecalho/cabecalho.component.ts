@@ -18,5 +18,8 @@ export class CabecalhoComponent implements OnInit {
     this.usuario = this.authService.obterUsuarioAutenticado();
   }
 
+  logout() {
+    this.authService.deslogar();
+  }
 
 }

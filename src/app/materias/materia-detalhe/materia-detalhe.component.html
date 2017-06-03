@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">Detalhes da Matéria</div>
   <div class="panel-body">
-    <form #f="ngForm" class="form-horizontal">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit)="editarMateria()" >
       <div class="form-group">
         <label class="col-sm-2 control-label">Título</label>
         <div class="col-sm-10">
@@ -32,10 +32,11 @@
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success" (click)="editarMateria()">Editar</button>
-          <button type="submit" class="btn btn-danger" (click)="excluirMateria(f)" >Excluir</button>
+          <button type="submit" class="btn btn-success" >Editar</button>
+          <button type="button" class="btn btn-danger" (click)="excluirMateria(f)" >Excluir</button>
         </div>
       </div>
+
     </form>
   </div>  
 </div>

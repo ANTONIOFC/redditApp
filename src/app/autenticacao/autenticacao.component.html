@@ -1,17 +1,23 @@
 <div class="col-md-4">
   <form #f="ngForm" class="form-signin" (ngSubmit)="fazerLogin(f)">
     <h2 class="form-signin-heading">Login de usuário</h2>
-    <label for="logon" class="sr-only">Logon</label>
-    <input type="text" id="logon" name="logon" class="form-control" placeholder="Logon" required="" autofocus=""
-       [(ngModel)]="usuario.logon" #logon="ngModel" required>
-    <label for="senha" class="sr-only">Senha</label>
-    <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required=""  [(ngModel)]="usuario.senha" #senha="ngModel" required>
+    <div class="form-group">
+      <label for="logon" class="sr-only">Logon</label>
+      <input type="text" id="logon" name="logon" class="form-control" placeholder="Logon" required="" autofocus=""
+        [(ngModel)]="usuario.logon" #logon="ngModel" required>
+        <campo-control-erro [erroMostrar]="campoIsValidTouched(logon)" erroMsg="Logon é obrigatório"></campo-control-erro>
+    </div>
+    <div class="form-group">
+      <label for="senha" class="sr-only">Senha</label>
+      <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required="" [(ngModel)]="usuario.senha" #senha="ngModel" required>
+      <campo-control-erro [erroMostrar]="campoIsValidTouched(senha)" erroMsg="Senha é obrigatória"></campo-control-erro>
+    </div>
     <div class="checkbox">
       <label>
         <input type="checkbox" value="lembrar"> Lembrar senha
       </label>
     </div>
-    <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+    <button class="btn btn-primary btn-block" type="submit" [disabled]="!f.valid">Entrar</button>
     <button class="btn btn-primary btn-block" type="button" (click)="signUp()">Criar Usuário</button>
   </form>
 </div>

@@ -54,6 +54,10 @@ export class MateriaFormComponent implements OnInit {
         )
    }
 
+  campoIsValidTouched(campo){
+    return !campo.valid && campo.touched;
+  }
+
   ngOnDestroy() {
     this.inscricao.unsubscribe();
   }

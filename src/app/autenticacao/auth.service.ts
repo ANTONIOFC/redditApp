@@ -31,7 +31,7 @@ export class AuthService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-     this._http
+    this._http
         .post(this._apiUrl + '/logar', JSON.stringify(_usuario), options )
         .map((response: Response) => response.json().data)
         .subscribe(result => {
@@ -48,21 +48,26 @@ export class AuthService {
         });
   }
 
+  deslogar() {
+    localStorage.removeItem("usuarioAtual");
+    this.mostrarMenuEmitter.emit(false);
+    //this.router.navigate(['/']);
+  }
+
+
    usuarioEstaAutenticado(){
-      console.log('Usuario esta autenticado: ');
-      console.log(localStorage.getItem('usuarioAtual'));
+      //console.log('Usuario esta autenticado: ');
+      //console.log(localStorage.getItem('usuarioAtual'));
       if (localStorage.getItem('usuarioAtual')) {
           this.mostrarMenuEmitter.emit(true);
-          console.log('está');
+          //console.log('está');
           return true;
       }
-      console.log('não está');
+     // console.log('não está');
       return false;
   }
 
   obterUsuarioAutenticado() {
     return JSON.parse(localStorage.getItem('usuarioAtual'));
   }
-
-
 }

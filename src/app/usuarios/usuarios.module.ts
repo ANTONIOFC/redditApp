@@ -5,14 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { UsuariosRoutingModule } from './usuarios.routing.module';
 import { UsuariosComponent } from './usuarios.component';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
-import { UsuariosService } from './usuarios.service';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    UsuariosRoutingModule
+    UsuariosRoutingModule,
+    SharedModule
   ],
   declarations: [
     UsuariosComponent,
@@ -20,7 +21,7 @@ import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.compo
     UsuarioDetalheComponent
   ],
   providers: [
-    UsuariosService
+    //UsuariosService
   ]
 })
 export class UsuariosModule { }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Usuario } from './../../models/usuario';
 import { UsuariosService } from './../../usuarios/usuarios.service';
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +15,9 @@ export class SignUpComponent implements OnInit {
   usuario: Usuario;
 
   constructor(
-    private usuarioService: UsuariosService   
+    private usuarioService: UsuariosService,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -25,7 +29,11 @@ export class SignUpComponent implements OnInit {
     .subscribe(
       data => { this.usuario = data },
       error => console.log(error),
-      () => console.log('gravado')
+      () =>  this.authService.logar(this.usuario)
     );
+  }
+
+  campoIsValidTouched(campo){
+    return !campo.valid && campo.touched;
   }
 }

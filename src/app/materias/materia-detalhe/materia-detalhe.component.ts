@@ -46,6 +46,10 @@ export class MateriaDetalheComponent implements OnInit {
     this.router.navigate(['/materias', this.materia._id, 'editar']);
   }
 
+  excluirMateria() {
+    
+  }
+
   ngOnDestroy() {
     this.inscricao.unsubscribe();
   }
