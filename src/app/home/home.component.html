@@ -1,16 +1,1 @@
-<p>
-  Olá {{ usuario.nome }}
-</p>
-<div class="row">
-  <div class="col-md-6">
-    <div class="list-group">
-      <a href="#" class="list-group-item active">
-        Matérias
-      </a>
-      <a *ngFor="let materia of materias" [routerLink]="[materia._id]" class="list-group-item">{{ materia.titulo }}</a>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<app-materias-media></app-materias-media>

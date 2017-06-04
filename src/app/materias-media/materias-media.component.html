@@ -1,0 +1,36 @@
+  <!-- Left-aligned media object -->
+<div class="row">
+  <ul class="media-list" *ngFor="let materia of materias">
+    <li class="media">
+      <div class="media-left">
+        <img src="../../assets/images/img_avatar1.png" class="media-object" style="width:30px">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ materia.titulo }}</h4>
+        <p>{{ materia.texto }}</p>
+        <h6>Autor: <strong>{{ materia._creator.nome }}</strong></h6>
+         <!-- Nested media object -->
+         <div class = "media" *ngFor="let comentario of materia.comentarios">
+            <div class="media-left">
+               <img src="../../assets/images/img_avatar1.png" class="media-object" style="width:15px">
+            </div> 
+            <div class = "media-body">
+              <p>{{ comentario.texto }}</p>
+              <h6>Autor: <strong>{{ comentario._creator.nome }}</strong></h6>
+            </div>
+         </div>
+        <form>
+          <div class="form-group">
+            <label for="comentario" >Comentário</label>
+            <textarea id="comentario" name="comentario" class="form-control" rows="2"></textarea>
+          </div>
+          <div class="pull-right">
+            <input class="btn btn-default btn-xs" type="button" value="Cancelar" >
+            <input class="btn btn-primary btn-xs" type="button" value="Comentar">
+          </div>
+        </form>
+      </div>
+    </li>
+    <hr>
+  </ul>
+</div>

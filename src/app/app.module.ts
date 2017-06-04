@@ -20,6 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { MateriasGuard } from './guards/materias.guard';
 import { UsuariosGuard } from './guards/usuarios.guard';
 import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
+import { MateriasMediaComponent } from './materias-media/materias-media.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
     HomeComponent,
     AutenticacaoComponent,
     CabecalhoComponent,
-    SignUpComponent
+    SignUpComponent,
+    MateriasMediaComponent
   ],
   imports: [
     BrowserModule,

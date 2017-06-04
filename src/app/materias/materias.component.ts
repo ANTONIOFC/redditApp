@@ -21,4 +21,8 @@ export class MateriasComponent implements OnInit {
     );
   }
 
+  criarNova(){
+    console.log('vai criar');
+  }
+
 }
