@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MateriasService } from './materias.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-materias',
@@ -11,7 +12,10 @@ export class MateriasComponent implements OnInit {
 
   materias: any[];
 
-  constructor(private materiasService: MateriasService) { }
+  constructor(
+    private materiasService: MateriasService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.materiasService.getAll()
@@ -21,8 +25,8 @@ export class MateriasComponent implements OnInit {
     );
   }
 
-  criarNova(){
-    console.log('vai criar');
+  criarNova() {
+    console.log('vai');
+    this.router.navigate(['materias/nova']);
   }
-
 }

@@ -1,3 +1,43 @@
-<p>
-  materia-nova-form works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title">Criação de Matéria</h3>
+   </div>
+  <div class="panel-body">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">Título</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="título" 
+              [(ngModel)]="materia.titulo" #titulo="ngModel" required>
+          <campo-control-erro  [erroMostrar]="campoIsValidTouched(titulo)" erroMsg="Título é obrigatório" ></campo-control-erro>
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+          <label for="nome" class="col-sm-2 control-label">Texto</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="3"  id="texto" name="texto" placeholder="texto" 
+                [(ngModel)]="materia.texto" #texto="ngModel" required></textarea>
+            <campo-control-erro  [erroMostrar]="campoIsValidTouched(texto)" erroMsg="Texto é obrigatório" ></campo-control-erro>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nome" class="col-sm-2 control-label">Link</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="link" name="link" placeholder="link" 
+                [(ngModel)]="materia.link" #link="ngModel" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!f.valid">Gravar</button>
+          </div>
+        </div>
+
+        <app-form-debug [form]="f" [objeto]="materia"></app-form-debug>
+    </form>
+  </div>
+</div>

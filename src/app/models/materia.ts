@@ -3,4 +3,5 @@ export class Materia {
     titulo: string;
     texto: string;
     link: string;
+    criadorId: string;
 }

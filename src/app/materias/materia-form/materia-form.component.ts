@@ -16,7 +16,7 @@ export class MateriaFormComponent implements OnInit {
   id: string;
   materia: Materia;
   inscricao: Subscription;
-  private formMudou: boolean = false;
+  formMudou: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -51,7 +51,7 @@ export class MateriaFormComponent implements OnInit {
           data => { this.materia = data },
           error => console.log(error),
           () => this.router.navigate(['/materias'])
-        )
+        );
    }
 
   campoIsValidTouched(campo){
