@@ -30,11 +30,12 @@ export class AutenticacaoComponent implements OnInit {
     this.authService.logar(this.usuario);
   }
 
-  signUp() {
+  signUp(f) {
+    f.reset();
     this.router.navigate(['/signUp']);
   }
 
   campoIsValidTouched(campo){
-    return !campo.valid && campo.touched;
+    return !campo.valid && campo.touched && !campo.pristine;
   }
 }

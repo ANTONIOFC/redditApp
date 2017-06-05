@@ -33,6 +33,10 @@ export class SignUpComponent implements OnInit {
     );
   }
 
+  cancelar() {
+    this.router.navigate(['']);
+  }
+
   campoIsValidTouched(campo){
     return !campo.valid && campo.touched;
   }
