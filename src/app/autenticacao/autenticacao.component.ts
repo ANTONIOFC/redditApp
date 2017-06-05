@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs/Rx';
 import { LogService } from './../shared/log.service';
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from './auth.service';
@@ -14,7 +14,7 @@ import { Usuario } from './../models/usuario';
 export class AutenticacaoComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
-  mostrarMenuEmitter = new EventEmitter<boolean>();
+ // mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(
     private logService: LogService,
@@ -24,7 +24,7 @@ export class AutenticacaoComponent implements OnInit {
   ngOnInit() {
   }
 
-  fazerLogin() {
+  fazerLogin(f) {
 
     this.logService.consoleLog('vai logar ...');
     this.authService.logar(this.usuario);
