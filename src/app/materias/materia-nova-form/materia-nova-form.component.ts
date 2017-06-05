@@ -24,6 +24,8 @@ export class MateriaNovaFormComponent implements OnInit {
 
   ngOnInit() {
     this.materia = new Materia();
+    let usuario = this.authService.obterUsuarioAutenticado();
+    this.materia.criadorId = usuario._id;
   }
 
   podeMudarRota() {
@@ -34,11 +36,8 @@ export class MateriaNovaFormComponent implements OnInit {
   }
 
    onSubmit(form){
-      var usuario = this.authService.obterUsuarioAutenticado();
-
-      this.materia.criadorId = usuario._id;
-      console.log(usuario);
-      this.materiasService.atualizar(this.materia)
+       //console.log(usuario);
+      this.materiasService.criar(this.materia)
         .subscribe(
           data => { this.materia = data },
           error => console.log(error),

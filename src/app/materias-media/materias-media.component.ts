@@ -23,5 +23,4 @@ export class MateriasMediaComponent implements OnInit {
       (result) => { this.materias = result } 
     );
   }
-
 }

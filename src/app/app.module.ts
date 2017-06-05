@@ -21,6 +21,7 @@ import { MateriasGuard } from './guards/materias.guard';
 import { UsuariosGuard } from './guards/usuarios.guard';
 import { SignUpComponent } from './autenticacao/sign-up/sign-up.component';
 import { MateriasMediaComponent } from './materias-media/materias-media.component';
+import { MateriasMediaDetalheComponent } from './materias-media-detalhe/materias-media-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MateriasMediaComponent } from './materias-media/materias-media.componen
     AutenticacaoComponent,
     CabecalhoComponent,
     SignUpComponent,
-    MateriasMediaComponent
+    MateriasMediaComponent,
+    MateriasMediaDetalheComponent
   ],
   imports: [
     BrowserModule,
