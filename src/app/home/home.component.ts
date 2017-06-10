@@ -22,10 +22,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.usuario = this.authService.obterUsuarioAutenticado();
-    
-    this.materiasService.getAll()
-    .subscribe(
-      (result) => { this.materias = result } 
-    );
   }
 }
